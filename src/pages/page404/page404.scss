@@ -1,0 +1,25 @@
+.page404{
+    font-family: "Montserrat",sans-serif;
+    margin: 0;
+    margin-bottom: 1%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+        .number {
+        color: #FF6060;
+        font-size:268pw;
+        font-weight: 800;
+        
+        }
+        .txt404{
+        font-size: 36px;
+        color: black;
+        }
+        .return{
+            color: black;  
+            font-weight: 400;
+            font-size:18px
+        }
+
+}
