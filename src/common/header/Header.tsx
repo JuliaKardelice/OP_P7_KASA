@@ -8,7 +8,7 @@ return (
 <header>
           <img src={logo} alt="logo de Kasa" />
           <nav>
-            <NavLink to="/home" className={({ isActive }) => isActive ? "active-link" : ""}>
+            <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : ""}>
               Accueil
             </NavLink>
             <NavLink to="/about" className={({ isActive }) => isActive ? "active-link" : ""} >

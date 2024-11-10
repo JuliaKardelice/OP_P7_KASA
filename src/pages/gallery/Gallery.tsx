@@ -40,7 +40,11 @@ export const Gallery: React.FC = () => {
                             <h2>{cardData.title}</h2>
                         </div>
                     </Link>
+                    
+
+                
                 ))
+
 
                 }
             </div>

@@ -1,4 +1,4 @@
-.ficheLogement {
+.fiche-Logement {
     font-family: "Montserrat",sans-serif;
     margin: 0;
     margin-bottom: 1%;
@@ -12,5 +12,25 @@
             border-radius: 18px;
             margin-bottom: 1%;
               
+        }
+        .descriptionPart{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        h1 {
+            color : #FF6060;
+
+        }
+        .hostInformation {
+
+        color : #FF6060;
+        }
+        .hostPicture{
+        background-color: #C4C4C4;
+        width: 64px;
+        height: 64px;
+        border-radius: 30px;
+        }
         }    
 }
+
