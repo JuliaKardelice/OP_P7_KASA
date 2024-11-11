@@ -37,31 +37,32 @@ export const FicheLogement: React.FC = () => {
       <section className="carroussel">
         <Caroussel pictures={logement?.pictures} />
       </section>
-      <section className="descriptionPart">
-        <div className="logementInformation">
+      <div className="content">
+        <section className="descriptionPart">
           <h1> {logement.title}</h1>
           <p> {logement.location}</p>
-          <div className="logementTages">
+          <div className="logementTags">
             {logement?.tags}
             <ul className="tagsList"></ul>
           </div>
-        </div>
-        <div className="hostInformation">
-          <p> {logement?.host.name}</p>
-          <div className="hostPicture">
-            <img src={logement.host.picture} alt="photo du locataire" />
+
+          <div className="hostInformation">
+            <p> {logement?.host.name}</p>
+            <div className="hostPicture">
+              <img src={logement.host.picture} alt="photo du locataire" />
+            </div>
           </div>
           <div className="ratingStars">
             <StarsRating rate={logement?.rating} />
           </div>
-        </div>
+        </section>
         <section className="collapse-part">
           {/* Collapse description */}
           <Collapse title="Description" content={logement.description} />
           {/* Collapse "équipement attention tableau mapper"*/}
           <Collapse title="Equipement" content={logement?.equipments} />
         </section>
-      </section>
+      </div>
     </div>
   );
 };

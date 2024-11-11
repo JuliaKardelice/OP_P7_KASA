@@ -2,27 +2,43 @@
     font-family: "Montserrat", sans-serif;
     margin: 0;
     margin-bottom: 1%;
+    height: 100%;
+    justify-content: space-around;
     width: 100%;
-    display: flex;
-    align-items: center;
     flex-direction: column;
 
-    .number {
-        color: #FF6060;
-        font-size: 268pw;
-        font-weight: 800;
 
+    .numbe404 {
+        height: 263px;
+        width: 597px;
+        position: relative;
+
+        h1 {
+            text-align: center;
+            color: #FF6060;
+            font-size: 268px;
+            font-weight: 700;
+        }
     }
 
     .txt404 {
+        position: relative;
+        text-align: center;
+        font-weight: 500;
         font-size: 36px;
-        color: black;
+        line-height: 51px;
+        color: #FF6060;
+        height: 51px;
+        width: 872px;
+
     }
 
     .return {
+        width: 100%;
+        text-align: center;
         color: black;
+        text-decoration: underline;
         font-weight: 400;
         font-size: 18px
     }
-
 }

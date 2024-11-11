@@ -1,27 +1,29 @@
 import React, { useState } from "react";
+import cards_data from "../../data/logements.json";
+import { Logement } from "../../pages/fiches_logements/FicheLogement";
 import "./Caroussel.scss";
-
 export interface CarousselProps {
-  pictures: string[];
+  id?: string;
 }
 
-export const Caroussel: React.FC<CarousselProps> = ({ pictures }) => {
+export const Caroussel: React.FC<CarousselProps> = ({ id }) => {
   const [currentIndexImage, setCurrentIndexImage] = useState<number>(0); ///l'image actuelle a pour index 0 à l'état initial de la variable on type pour définir un nombre (et pas un string par exemple...)
-
+  const images =
+    (cards_data as Logement[]).find((card) => card.id === id)?.pictures || [];
   const nextImage = () => {
-    setCurrentIndexImage((currentIndexImage + 1) % pictures.length);
+    setCurrentIndexImage((currentIndexImage + 1) % images.length);
   };
   const prevImage = () => {
     setCurrentIndexImage(
-      (currentIndexImage - 1 + pictures.length) % pictures.length
+      (currentIndexImage - 1 + images.length) % images.length
     );
   };
 
   return (
     <div className="imgDiv">
-      <img src={pictures[currentIndexImage]} alt="Photo descriptive" />
+      <img src={images[currentIndexImage]} alt="Photo descriptive" />
 
-      {pictures.length > 1 && (
+      {images.length > 1 && (
         <>
           <div className="left-right-div">
             <span className="left" onClick={prevImage}>
@@ -32,7 +34,7 @@ export const Caroussel: React.FC<CarousselProps> = ({ pictures }) => {
             </span>
           </div>
           <p>
-            {currentIndexImage + 1}/{pictures.length}
+            {currentIndexImage + 1}/{images.length}
           </p>
         </>
       )}
