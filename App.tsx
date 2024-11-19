@@ -6,8 +6,8 @@ import {
   Routes,
 } from "react-router-dom";
 import "./App.scss";
-import logo from "./assets/logo.png";
-import { About } from "./pages/about/About";
+import { About } from "./src/pages/about/About";
+import { Page404 } from "./src/pages/page404/Page404";
 
 export const App: React.FC = () => {
   return (
@@ -33,7 +33,7 @@ export const App: React.FC = () => {
         <Routes>
           <Route path="/about" element={<About />} />
         </Routes>
-        <Route path="/page404" element={Page404} />
+        <Route path="/page404" element={<Page404 />} />
       </Router>
       <footer>
         <img src={logo} alt="logo de Kasa" />

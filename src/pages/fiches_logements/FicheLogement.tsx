@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Caroussel } from "../../components/caroussel/Caroussel";
 import { Collapse } from "../../components/collapse/Collapse";
-import { StarsRating } from "../../components/rating/starsRating";
+import { StarsRating } from "../../components/Starsrating/StarsRating";
 import LogementContent from "../../data/logements.json";
 import "./FicheLogement.scss";
 
@@ -24,9 +24,9 @@ export interface Logement {
 
 export const FicheLogement: React.FC = () => {
   const { id } = useParams<{ id: string }>(); // Récupération de l'ID à partir des paramètres
-
   // Pourquoi logement n'est-il pas définit ?
   const logement = LogementContent.find((logement) => logement.id === id);
+  console.log(logement?.rating);
 
   // Mettre l'erreur 404
 
@@ -35,12 +35,12 @@ export const FicheLogement: React.FC = () => {
   return (
     <div className="fiche-logement">
       <section className="carroussel">
-        <Caroussel pictures={logement?.pictures} />
+        <Caroussel id={logement?.id} />
       </section>
       <div className="content">
         <section className="descriptionPart">
-          <h1> {logement.title}</h1>
-          <p> {logement.location}</p>
+          <h1> {logement?.title}</h1>
+          <p> {logement?.location}</p>
           <div className="logementTags">
             {logement?.tags}
             <ul className="tagsList"></ul>
@@ -49,7 +49,7 @@ export const FicheLogement: React.FC = () => {
           <div className="hostInformation">
             <p> {logement?.host.name}</p>
             <div className="hostPicture">
-              <img src={logement.host.picture} alt="photo du locataire" />
+              <img src={logement?.host.picture} alt="photo du locataire" />
             </div>
           </div>
           <div className="ratingStars">
@@ -58,7 +58,7 @@ export const FicheLogement: React.FC = () => {
         </section>
         <section className="collapse-part">
           {/* Collapse description */}
-          <Collapse title="Description" content={logement.description} />
+          <Collapse title="Description" content={logement?.description} />
           {/* Collapse "équipement attention tableau mapper"*/}
           <Collapse title="Equipement" content={logement?.equipments} />
         </section>
