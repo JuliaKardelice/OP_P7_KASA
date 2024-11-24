@@ -33,15 +33,8 @@ export const Collapse: React.FC<CollapseProps> = ({ title, content }) => {
         {title}
         <i onClick={toggleCollapse} className="fa-solid fa-chevron-up"></i>
       </h3>
-      {Array.isArray(content) ? (
-        <ul ref={pRef}>
-          {content.map((equipment, index) => (
-            <li key={index}>{equipment}</li>
-          ))}
-        </ul>
-      ) : (
-        <p ref={pRef}>{content}</p>
-      )}
+
+      <p ref={pRef}>{content}</p>
     </div>
   );
 };

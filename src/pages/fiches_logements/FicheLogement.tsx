@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Caroussel } from "../../components/caroussel/Caroussel";
 import { Collapse } from "../../components/collapse/Collapse";
-import { StarsRating } from "../../components/Starsrating/StarsRating";
 import LogementContent from "../../data/logements.json";
 import "./FicheLogement.scss";
 
@@ -52,9 +51,7 @@ export const FicheLogement: React.FC = () => {
               <img src={logement?.host.picture} alt="photo du locataire" />
             </div>
           </div>
-          <div className="ratingStars">
-            <StarsRating rate={logement?.rating} />
-          </div>
+          <div className="ratingStars">{logement?.rating}</div>
         </section>
         <section className="collapse-part">
           {/* Collapse description */}

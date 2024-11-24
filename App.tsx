@@ -6,6 +6,7 @@ import {
   Routes,
 } from "react-router-dom";
 import "./App.scss";
+import { logo } from "./src/assets/logo.png";
 import { About } from "./src/pages/about/About";
 import { Page404 } from "./src/pages/page404/Page404";
 
