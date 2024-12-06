@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { Caroussel } from "../../components/caroussel/Caroussel";
-import { CollapseBis } from "../../components/collapse/CollapseBis";
+import { CollapseBis } from "../../components/collapse/Collapse";
 import cards_data from "../../data/logements.json";
 import { Logement } from "../fiches_logements/FicheLogement";
 import "./CardsPage.scss";

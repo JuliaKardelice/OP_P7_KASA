@@ -1,6 +1,6 @@
 import React from "react";
 import aboutBanner from "../../assets/aboutBanner.jpeg";
-import { CollapseBis } from "../../components/collapse/CollapseBis";
+import { CollapseBis } from "../../components/collapse/Collapse";
 import aboutContent from "../../data/string.json";
 import "./About.scss";
 

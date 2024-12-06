@@ -1,29 +1,24 @@
-import React, { ReactNode, useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 import "./Collapse.scss";
-
+//On cree une interface pour definir les props
 export interface CollapseProps {
   title: string;
-  content: ReactNode;
+  content: ReactNode; //Utilisation de reactnode pour designer tout element utilise en react
 }
-
-export const Collapse: React.FC<CollapseProps> = ({ title, content }) => {
+export const CollapseBis: React.FC<CollapseProps> = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
-  const [divHeight, setDivHeigt] = useState(5.5);
-  /*** le set permet de changer la valeur du premier élements du tableau */
+  const [divHeight, setDivHeight] = useState(5.5);
   const pRef = useRef<HTMLParagraphElement | null>(null);
-
   const toggleCollapse = () => {
-    setIsActive(!isActive);
+    setIsActive(!isActive); // on set is active a false
     if (!isActive) {
-      setDivHeigt(
+      setDivHeight(
         ((pRef.current?.offsetHeight || 0) / window.innerHeight) * 100 + 5
-      );
-      /*Le signe pipe (||) permet que ce soit soit la valeur de départ (soit 5.5) soit 0 **/
+      ); //
     } else {
-      setDivHeigt(5.5);
+      setDivHeight(5.5);
     }
   };
-
   return (
     <div
       className={`serie ${isActive ? "active" : ""}`}
@@ -33,7 +28,6 @@ export const Collapse: React.FC<CollapseProps> = ({ title, content }) => {
         {title}
         <i onClick={toggleCollapse} className="fa-solid fa-chevron-up"></i>
       </h3>
-
       <p ref={pRef}>{content}</p>
     </div>
   );
