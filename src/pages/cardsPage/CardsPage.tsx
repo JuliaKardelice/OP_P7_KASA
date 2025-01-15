@@ -1,10 +1,25 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { Caroussel } from "../../components/caroussel/Caroussel";
-import { CollapseBis } from "../../components/collapse/Collapse";
+import { Collapse } from "../../components/collapse/Collapse";
 import cards_data from "../../data/logements.json";
-import { Logement } from "../fiches_logements/FicheLogement";
 import "./CardsPage.scss";
+
+export interface Logement {
+  id: string;
+  title: string;
+  cover: string;
+  pictures: string[];
+  description: string;
+  host: {
+    name: string;
+    picture: string;
+  };
+  rating: string;
+  location: string;
+  equipments: string[];
+  tags: string[];
+}
 
 export const CardsPage: React.FC = () => {
   const { id } = useParams();
@@ -52,8 +67,8 @@ export const CardsPage: React.FC = () => {
             </div>
           </div>
           <div className="info-section info-section3">
-            <CollapseBis title="Description" content={dataGroup.description} />
-            <CollapseBis
+            <Collapse title="Description" content={dataGroup.description} />
+            <Collapse
               title="Équipement"
               content={dataGroup.equipments.map((equipment, index) => (
                 <span key={index}>{equipment}</span>

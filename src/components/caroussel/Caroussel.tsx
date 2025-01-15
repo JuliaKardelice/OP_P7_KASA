@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import cards_data from "../../data/logements.json";
-import { Logement } from "../../pages/fiches_logements/FicheLogement";
+import { Logement } from "../../pages/cardsPage/CardsPage";
 import "./Caroussel.scss";
 export interface CarousselProps {
   id?: string;

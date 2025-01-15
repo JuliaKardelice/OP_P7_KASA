@@ -5,7 +5,7 @@ export interface CollapseProps {
   title: string;
   content: ReactNode; //Utilisation de reactnode pour designer tout element utilise en react
 }
-export const CollapseBis: React.FC<CollapseProps> = ({ title, content }) => {
+export const Collapse: React.FC<CollapseProps> = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
   const [divHeight, setDivHeight] = useState(5.5);
   const pRef = useRef<HTMLParagraphElement | null>(null);

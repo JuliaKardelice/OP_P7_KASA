@@ -1,6 +1,6 @@
 import React from "react";
 import aboutBanner from "../../assets/aboutBanner.jpeg";
-import { CollapseBis } from "../../components/collapse/Collapse";
+import { Collapse } from "../../components/collapse/Collapse";
 import aboutContent from "../../data/string.json";
 import "./About.scss";
 
@@ -14,7 +14,7 @@ export const About: React.FC = () => {
       </div>
       <div className="content">
         {Object.entries(aboutContent).map(([title, content]) => (
-          <CollapseBis title={title} key={title} content={content} />
+          <Collapse title={title} key={title} content={content} />
         ))}
       </div>
     </div>
